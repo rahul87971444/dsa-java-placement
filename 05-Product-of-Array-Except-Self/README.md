@@ -1,12 +1,14 @@
-# 🔤 Character Frequency in Java
+# 🚀 Product of Array Except Self | LeetCode 238
 
-Find the frequency of each character in a string.
+One of the most important array interview questions.
 
 ---
 
 # 📌 Problem Statement
 
-Write a Java program to count how many times each character appears in a string.
+Given an integer array, return an array where each element is equal to the product of all other elements except itself.
+
+**Do not use division.**
 
 ---
 
@@ -15,25 +17,35 @@ Write a Java program to count how many times each character appears in a string.
 Input
 
 ```
-banana
+[1,2,3,4]
 ```
 
 Output
 
 ```
-b = 1
-a = 3
-n = 2
+[24,12,8,6]
+```
+
+Explanation
+
+```
+24 = 2×3×4
+
+12 = 1×3×4
+
+8 = 1×2×4
+
+6 = 1×2×3
 ```
 
 ---
 
 # 🎯 Learning Objectives
 
-- String Traversal
-- HashMap
-- Frequency Counting
-- Character Processing
+- Prefix Product
+- Suffix Product
+- Space Optimization
+- Interview Optimization
 
 ---
 
@@ -41,67 +53,44 @@ n = 2
 
 | Approach | Time | Space |
 |----------|------|-------|
-| Nested Loop | O(n²) | O(1) |
-| HashMap | O(n) | O(n) |
+| Brute Force | O(n²) | O(1) |
+| Prefix + Suffix | O(n) | O(n) |
+| Optimized | O(n) | O(1)* |
+
+(*excluding output array)
 
 ---
 
-# 🧠 Algorithm
+# 🧠 Pattern
 
-1. Create a HashMap.
-2. Traverse the string.
-3. If character exists, increment its count.
-4. Otherwise insert it with count = 1.
-5. Print all frequencies.
+```
+Prefix
+
+↓
+
+Suffix
+
+↓
+
+Combine
+```
 
 ---
 
 # 🌍 Real-Life Example
 
-Teacher checking attendance.
+Imagine multiplying everyone's salary except your own.
 
-```
-A
-B
-A
-A
-C
-```
-
-Frequency
-
-```
-A = 3
-
-B = 1
-
-C = 1
-```
-
----
-
-# ⏱ Complexity
-
-HashMap
-
-Time
-
-```
-O(n)
-```
-
-Space
-
-```
-O(n)
-```
+Instead of multiplying everything repeatedly, store the product from the left and the product from the right separately.
 
 ---
 
 # ⭐ Key Takeaways
 
-✔ HashMap
+✔ Prefix Product
 
-✔ Frequency Count
+✔ Suffix Product
 
-✔ Character Traversal
+✔ Space Optimization
+
+✔ No Division
