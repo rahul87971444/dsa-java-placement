@@ -1,14 +1,14 @@
-# 🔤 Longest Common Prefix
+# 🚀 Trapping Rain Water (LeetCode 42)
 
-Find the longest common prefix among all strings.
+One of the most famous Two Pointer interview questions.
 
 ---
 
 # 📌 Problem Statement
 
-Given an array of strings, return the longest common prefix.
+Given an array representing bar heights,
 
-If there is no common prefix, return an empty string.
+calculate how much rainwater can be trapped.
 
 ---
 
@@ -17,30 +17,69 @@ If there is no common prefix, return an empty string.
 Input
 
 ```
-["flower","flow","flight"]
+[0,1,0,2,1,0,1,3,2,1,2,1]
 ```
 
 Output
 
 ```
-fl
+6
 ```
+
+---
+
+# 🌍 Real-Life Example
+
+Imagine buildings after rain.
+
+```
+█     █
+
+█ █   █
+
+█ █ █ █
+```
+
+Water gets trapped between taller buildings.
 
 ---
 
 # 🎯 Learning Objectives
 
-- String Comparison
-- Prefix Matching
-- Character Traversal
+- Prefix Maximum
+- Suffix Maximum
+- Two Pointer
+- Greedy Thinking
 
 ---
 
 # 🧠 Observation
 
-Compare characters column by column.
+Water above a bar depends on
 
-The first mismatch ends the common prefix.
+```
+Minimum
+
+of
+
+Left Maximum
+
+Right Maximum
+```
+
+Formula
+
+```
+Water
+
+=
+
+min(leftMax,rightMax)
+
+-
+
+Current Height
+```
 
 ---
 
@@ -48,41 +87,22 @@ The first mismatch ends the common prefix.
 
 | Approach | Time | Space |
 |----------|------|-------|
-| Compare Every String | O(n × m) | O(1) |
-| Sort + Compare First & Last | O(n log n) | O(1) |
-
-Where
-
-n = number of strings
-
-m = length of shortest string
+| Brute Force | O(n²) | O(1) |
+| Prefix & Suffix Arrays | O(n) | O(n) |
+| Two Pointer | O(n) | O(1) |
 
 ---
 
-# 🌍 Real-Life Example
-
-Words
+# ⭐ Key Formula
 
 ```
-Interview
+Water
 
-Internet
+=
 
-Internal
+min(LeftMax,RightMax)
+
+-
+
+Height
 ```
-
-Common beginning
-
-```
-Inter
-```
-
----
-
-# ⭐ Key Takeaways
-
-✔ Prefix Matching
-
-✔ Character Comparison
-
-✔ Early Exit
