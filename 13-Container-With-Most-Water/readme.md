@@ -1,10 +1,10 @@
-# 🌊 Container With Most Water — LeetCode 11
+# Container With Most Water — LeetCode 11
 
 Find two vertical lines that together with the x-axis form a container holding the maximum amount of water.
 
 ---
 
-## 📌 Problem Statement
+##  Problem Statement
 
 Given:
 
